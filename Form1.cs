@@ -175,8 +175,15 @@ namespace IsvuWinForms
                 if (response.IsSuccessStatusCode)
                 {
                     MessageBox.Show("Student details saved directly to SQL Database!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string targetJmbag = txtJmbag.Text;
                     ToggleEditUI(false);
                     comboBoxOib.SelectedIndex = 0;
+                    Form2 examForm = new Form2(_httpClient!, ApiBaseUrl, targetJmbag);
+                    this.Hide();
+
+                    examForm.ShowDialog(); 
+
+                    this.Show();
                 }
                 else
                 {

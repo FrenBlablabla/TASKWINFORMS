@@ -30,6 +30,5 @@ namespace IsvuWinForms
 
         [JsonPropertyName("studijskiProgramId")]
         public int? StudijskiProgramId { get; set; }
-
     }
 }
